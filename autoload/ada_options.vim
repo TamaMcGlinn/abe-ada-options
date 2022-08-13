@@ -13,3 +13,8 @@ function! ada_options#ToggleAutoformatting() abort
   let g:ada_autoformat = !g:ada_autoformat
   echom "Ada_Options: Turned Ada autoformatting " . (g:ada_autoformat ? "on" : "off")
 endfunction
+
+function! ada_options#GPRBuild(...) abort
+  let l:args = copy(a:000)
+  execute "!gprbuild ".join(l:args)
+endfunction
